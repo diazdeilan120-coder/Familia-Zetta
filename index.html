@@ -72,7 +72,6 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
 
     a { text-decoration: none; color: inherit; }
 
-    /* Utilities */
     .text-gold { color: var(--gold); }
     .text-muted { color: var(--muted-foreground); }
 
@@ -85,13 +84,10 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
     }
 
     .bg-gold-gradient { background: var(--gradient-gold); }
-
     .gold-border { border: 1px solid oklch(0.78 0.13 80 / 40%); }
-
     .shadow-gold-glow { box-shadow: var(--shadow-gold); }
     .shadow-elegant { box-shadow: var(--shadow-elegant); }
 
-    /* Animations */
     @keyframes shimmer {
       0%, 100% { opacity: 0.5; }
       50% { opacity: 1; }
@@ -108,12 +104,10 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
     .animate-float { animation: float 4s ease-in-out infinite; }
     .animate-fade-up { animation: fade-up 0.8s ease-out both; }
 
-    /* Layout */
     .container { max-width: 80rem; margin: 0 auto; }
     .container-md { max-width: 64rem; margin: 0 auto; }
     .container-sm { max-width: 48rem; margin: 0 auto; }
 
-    /* Ambient glow */
     .ambient {
       pointer-events: none;
       position: absolute;
@@ -145,7 +139,6 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       filter: blur(100px);
     }
 
-    /* NAV */
     header {
       position: relative;
       z-index: 10;
@@ -182,7 +175,6 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       .nav-link { display: none; }
     }
 
-    /* HERO */
     .hero {
       position: relative;
       padding: 4rem 3rem 6rem;
@@ -242,7 +234,6 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       .hero { padding: 4rem 1.5rem 6rem; }
     }
 
-    /* WA Button */
     .wa-btn {
       display: inline-flex;
       align-items: center;
@@ -263,7 +254,6 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
     .wa-btn svg { width: 1.25rem; height: 1.25rem; flex-shrink: 0; }
     .wa-btn-lg { font-size: 1.125rem; padding: 1.25rem 2.5rem; }
 
-    /* Gold Divider */
     .gold-divider {
       display: flex;
       align-items: center;
@@ -284,10 +274,7 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       text-transform: uppercase;
     }
 
-    /* Sections */
-    section {
-      padding: 5rem 3rem;
-    }
+    section { padding: 5rem 3rem; }
     @media (max-width: 640px) {
       section { padding: 5rem 1.5rem; }
     }
@@ -305,7 +292,6 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       margin: 0 auto 2.5rem;
     }
 
-    /* Video */
     .video-wrap {
       border-radius: 1rem;
       overflow: hidden;
@@ -319,7 +305,6 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       display: block;
     }
 
-    /* Steps */
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -347,17 +332,9 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       margin-bottom: 1rem;
       line-height: 1;
     }
-    .step-title {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-    }
-    .step-desc {
-      color: var(--muted-foreground);
-      font-weight: 300;
-      line-height: 1.6;
-    }
+    .step-title { font-size: 1.25rem; margin-bottom: 0.75rem; }
+    .step-desc { color: var(--muted-foreground); font-weight: 300; line-height: 1.6; }
 
-    /* Benefits */
     .benefits-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -366,11 +343,7 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       margin: 0 auto;
       list-style: none;
     }
-    .benefit-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-    }
+    .benefit-item { display: flex; align-items: flex-start; gap: 0.75rem; }
     .benefit-dot {
       margin-top: 0.375rem;
       width: 0.5rem;
@@ -379,12 +352,8 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       background: var(--gradient-gold);
       flex-shrink: 0;
     }
-    .benefit-text {
-      color: rgba(var(--foreground), 0.9);
-      font-weight: 300;
-    }
+    .benefit-text { color: rgba(var(--foreground), 0.9); font-weight: 300; }
 
-    /* CTA Final */
     .cta-section {
       padding: 7rem 3rem;
       text-align: center;
@@ -396,24 +365,11 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       font-size: clamp(2.25rem, 6vw, 3.75rem);
       line-height: 1.15;
     }
-    .cta-sub {
-      margin-top: 1.5rem;
-      font-size: 1.125rem;
-      color: var(--muted-foreground);
-      font-weight: 300;
-    }
-    .cta-phone {
-      margin-top: 1.5rem;
-      font-size: 0.75rem;
-      color: var(--muted-foreground);
-      letter-spacing: 0.2em;
-    }
+    .cta-sub { margin-top: 1.5rem; font-size: 1.125rem; color: var(--muted-foreground); font-weight: 300; }
+    .cta-phone { margin-top: 1.5rem; font-size: 0.75rem; color: var(--muted-foreground); letter-spacing: 0.2em; }
 
-    @media (max-width: 640px) {
-      .cta-section { padding: 7rem 1.5rem; }
-    }
+    @media (max-width: 640px) { .cta-section { padding: 7rem 1.5rem; } }
 
-    /* Footer */
     footer {
       border-top: 1px solid oklch(0.25 0.02 80 / 50%);
       padding: 2.5rem 3rem;
@@ -426,23 +382,15 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       gap: 0.75rem;
       margin-bottom: 0.75rem;
     }
-    .footer-logo img {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-    }
+    .footer-logo img { width: 2rem; height: 2rem; border-radius: 50%; }
     .footer-logo span {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1rem;
       letter-spacing: 0.2em;
       color: var(--gold);
     }
-    .footer-copy {
-      font-size: 0.75rem;
-      color: var(--muted-foreground);
-    }
+    .footer-copy { font-size: 0.75rem; color: var(--muted-foreground); }
 
-    /* Floating WA */
     .wa-float {
       position: fixed;
       bottom: 1.5rem;
@@ -462,14 +410,12 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
     .wa-float:hover { transform: scale(1.1); }
     .wa-float svg { width: 1.75rem; height: 1.75rem; }
 
-    /* Main relative */
     main { position: relative; }
   </style>
 </head>
 <body>
 
 <main>
-  <!-- Ambient glow -->
   <div class="ambient">
     <div class="ambient-top"></div>
     <div class="ambient-bottom"></div>
@@ -478,10 +424,7 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
   <!-- NAV -->
   <header>
     <div class="nav-logo">
-      <img
-        src="familia-zeta-logo.png"
-        alt="Familia Zeta"
-      />
+      <img src="familia-zeta-logo.png" alt="Familia Zeta" />
       <span>ZETA</span>
     </div>
     <a
@@ -490,8 +433,8 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       rel="noopener noreferrer"
       class="nav-link"
       onclick="fbq('track', 'Lead')"
-      onclick="fbq('track', 'Lead')"
     >
+      Unirme al grupo
     </a>
   </header>
 
@@ -501,7 +444,6 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       src="familia-zeta-logo.png"
       alt="Logo Familia Zeta"
       class="hero-logo animate-float"
-      onerror="this.style.background='var(--gold)';this.removeAttribute('src')"
     />
     <p class="hero-eyebrow animate-shimmer">Bienvenido a la Familia</p>
     <h1 class="hero-h1 animate-fade-up">
@@ -541,12 +483,7 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       Mira cómo funciona y por qué ya somos la comunidad de dinamicas que más rápido crece.
     </p>
     <div class="video-wrap">
-      <video
-        src="familia-zeta-presentacion.mp4"
-        controls
-        playsinline
-        preload="metadata"
-      ></video>
+      <video src="familia-zeta-presentacion.mp4" controls playsinline preload="metadata"></video>
     </div>
   </section>
 
@@ -590,30 +527,12 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       Por qué <span class="text-gold-gradient" style="font-style:italic;">elegirnos</span>
     </h2>
     <ul class="benefits-list">
-      <li class="benefit-item">
-        <span class="benefit-dot"></span>
-        <span class="benefit-text">Sorteos todos los días sin excepción</span>
-      </li>
-      <li class="benefit-item">
-        <span class="benefit-dot"></span>
-        <span class="benefit-text">4 oportunidades de ganar en cada sorteo</span>
-      </li>
-      <li class="benefit-item">
-        <span class="benefit-dot"></span>
-        <span class="benefit-text">Pagos y comprobantes 100% transparentes</span>
-      </li>
-      <li class="benefit-item">
-        <span class="benefit-dot"></span>
-        <span class="benefit-text">Entrega inmediata después del sorteo</span>
-      </li>
-      <li class="benefit-item">
-        <span class="benefit-dot"></span>
-        <span class="benefit-text">Comunidad activa y verificada</span>
-      </li>
-      <li class="benefit-item">
-        <span class="benefit-dot"></span>
-        <span class="benefit-text">Atención personalizada por WhatsApp</span>
-      </li>
+      <li class="benefit-item"><span class="benefit-dot"></span><span class="benefit-text">Sorteos todos los días sin excepción</span></li>
+      <li class="benefit-item"><span class="benefit-dot"></span><span class="benefit-text">4 oportunidades de ganar en cada sorteo</span></li>
+      <li class="benefit-item"><span class="benefit-dot"></span><span class="benefit-text">Pagos y comprobantes 100% transparentes</span></li>
+      <li class="benefit-item"><span class="benefit-dot"></span><span class="benefit-text">Entrega inmediata después del sorteo</span></li>
+      <li class="benefit-item"><span class="benefit-dot"></span><span class="benefit-text">Comunidad activa y verificada</span></li>
+      <li class="benefit-item"><span class="benefit-dot"></span><span class="benefit-text">Atención personalizada por WhatsApp</span></li>
     </ul>
   </section>
 
@@ -631,12 +550,7 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
       Nuestros miembros cuentan su experiencia, en sus propias palabras.
     </p>
     <div class="video-wrap">
-      <video
-        src="familia-zeta-testimonio.mp4"
-        controls
-        playsinline
-        preload="metadata"
-      ></video>
+      <video src="familia-zeta-testimonio.mp4" controls playsinline preload="metadata"></video>
     </div>
   </section>
 
@@ -670,10 +584,7 @@ src="https://www.facebook.com/tr?id=2042259893830153&ev=PageView&noscript=1"
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">
-      <img
-        src="familia-zeta-logo.png"
-        alt="Familia Zeta"
-      />
+      <img src="familia-zeta-logo.png" alt="Familia Zeta" />
       <span>FAMILIA ZETA</span>
     </div>
     <p class="footer-copy">© <span id="year"></span> Familia Zeta. Todos los derechos reservados.</p>
