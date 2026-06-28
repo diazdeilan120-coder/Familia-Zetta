@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/grupo2", "destination": "/grupo2/index.html" }
+  ]
+}
