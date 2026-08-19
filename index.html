@@ -59,6 +59,33 @@
 
     a { text-decoration: none; color: inherit; }
 
+    /* ── VIDEO BG ── */
+    .bg-video-wrap {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+    .bg-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%) scale(1.15);
+      filter: blur(22px) brightness(0.42) saturate(1.15);
+    }
+    .bg-video-dim {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.75) 100%);
+    }
+
     /* ── GLOW BG ── */
     .bg-glow {
       position: fixed;
@@ -109,42 +136,68 @@
       margin-top: 0.25rem;
     }
 
-    /* ── ALERT BOX ── */
+    /* ── ALERT BOX (desplegable) ── */
     .alert-box {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.09);
       border-radius: 1rem;
-      padding: 1.5rem 1.75rem;
       max-width: 28rem;
       width: 100%;
       text-align: left;
+      overflow: hidden;
     }
+    .alert-box summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      user-select: none;
+    }
+    .alert-box summary::-webkit-details-marker { display: none; }
     .alert-title {
       font-size: 0.7rem;
       letter-spacing: 0.4em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 1rem;
       text-align: center;
+    }
+    .alert-chevron {
+      width: 0.6rem;
+      height: 0.6rem;
+      border-right: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+    .alert-box[open] .alert-chevron { transform: rotate(-135deg); }
+    .alert-box-body {
+      padding: 0 1.5rem 1.25rem;
     }
     .alert-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.65rem;
+      align-items: center;
+      gap: 0.35rem;
     }
     .alert-list li {
       display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      font-size: clamp(0.9rem, 3.5vw, 1rem);
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      font-size: clamp(0.85rem, 3.5vw, 0.95rem);
       color: var(--text);
-      line-height: 1.4;
+      line-height: 1.25;
+      text-align: center;
     }
     .alert-list .icon {
-      font-size: 1.1rem;
+      font-size: 1rem;
       flex-shrink: 0;
-      margin-top: 0.05rem;
+      margin-top: 0.02rem;
     }
 
     /* ── CTA ── */
@@ -187,6 +240,76 @@
       font-size: 0.75rem;
       color: var(--muted);
       letter-spacing: 0.05em;
+    }
+
+    /* ── GROUP TIER BUTTONS ── */
+    .group-tiers {
+      width: 100%;
+      max-width: 28rem;
+      margin-top: 0.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .group-tiers-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .group-tiers-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .btn-tier {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-align: left;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,168,76,0.35);
+      padding: 0.7rem 1rem;
+      border-radius: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+    .btn-tier .tier-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 1px rgba(201,168,76,0.3);
+    }
+    .btn-tier .tier-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      min-width: 0;
+    }
+    .btn-tier .tier-name {
+      font-size: clamp(0.95rem, 4vw, 1.05rem);
+      letter-spacing: 0.02em;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+    .btn-tier .tier-desc {
+      font-size: 0.72rem;
+      line-height: 1.25;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .btn-tier:hover {
+      background: rgba(201,168,76,0.1);
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201,168,76,0.2);
+    }
+    .btn-tier:active { transform: scale(0.98); }
+    .btn-tier.luxury {
+      border-color: rgba(240,208,128,0.55);
+      background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(201,168,76,0.03));
     }
 
     /* ── FOOTER ── */
@@ -251,6 +374,13 @@
 </head>
 <body>
 
+<div class="bg-video-wrap">
+  <video class="bg-video" autoplay muted loop playsinline preload="auto">
+    <source src="motion-fondo.mp4" type="video/mp4" />
+  </video>
+</div>
+<div class="bg-video-dim"></div>
+
 <div class="bg-glow"></div>
 
 <main>
@@ -263,16 +393,21 @@
     <div class="brand-sub">Dinámicas diarias por WhatsApp</div>
   </div>
 
-  <!-- Info box -->
-  <div class="alert-box">
-    <p class="alert-title">⚠️ Lee antes de entrar ⚠️</p>
-    <ul class="alert-list">
-      <li><span class="icon">🔥</span> Sorteos en vivo <strong>todos los días</strong></li>
-      <li><span class="icon">💰</span> Solo necesitas <strong>2 cifras</strong> para ganar</li>
-      <li><span class="icon">🎯</span> <strong>4 oportunidades</strong> de ganar por sorteo</li>
-      <li><span class="icon">✅</span> Pagos <strong>inmediatos</strong> y comprobados</li>
-    </ul>
-  </div>
+  <!-- Info box (desplegable) -->
+  <details class="alert-box">
+    <summary>
+      <span class="alert-title">⚠️ Lee antes de entrar ⚠️</span>
+      <span class="alert-chevron"></span>
+    </summary>
+    <div class="alert-box-body">
+      <ul class="alert-list">
+        <li><span class="icon">🔥</span> Sorteos en vivo <strong>todos los días</strong></li>
+        <li><span class="icon">💰</span> Solo necesitas <strong>2 cifras</strong> para ganar</li>
+        <li><span class="icon">🎯</span> <strong>4 oportunidades</strong> de ganar por sorteo</li>
+        <li><span class="icon">✅</span> Pagos <strong>inmediatos</strong> y comprobados</li>
+      </ul>
+    </div>
+  </details>
 
   <!-- CTA -->
   <div class="cta-wrap">
@@ -288,6 +423,51 @@
       📲 ENTRAR AL GRUPO AHORA
     </a>
     <p class="btn-note">Gratis · Sin costo · Solo WhatsApp</p>
+
+    <div class="group-tiers">
+      <p class="group-tiers-title">O elige tu grupo</p>
+      <div class="group-tiers-row">
+        <a
+          href="https://chat.whatsapp.com/JlfTetmFVTcKTV25qcVIWi?s=cl&p=i&mlu=4&amv=1"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-tier"
+          onclick="fbq('track', 'Lead')"
+        >
+          <img src="icon-3k.png" alt="Familia Zeta 3K" class="tier-icon" />
+          <span class="tier-text">
+            <span class="tier-name">Familia Zeta Flash 3K</span>
+            <span class="tier-desc">Dinámicas rápidas desde solo $3.000. Números, resultados y ganadores al instante.</span>
+          </span>
+        </a>
+        <a
+          href="https://chat.whatsapp.com/BGItc222YRqGToJa7ibMOz?s=cl&p=i&mlu=4&amv=1"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-tier"
+          onclick="fbq('track', 'Lead')"
+        >
+          <img src="icon-vip2.png" alt="Familia Zeta VIP" class="tier-icon" />
+          <span class="tier-text">
+            <span class="tier-name">Familia Zeta VIP</span>
+            <span class="tier-desc">Dinámicas de $5K hasta $20K, con hasta 4 oportunidades de ganar por sorteo.</span>
+          </span>
+        </a>
+        <a
+          href="https://chat.whatsapp.com/Hi9y6f4Ozg26CsiCX34ZTP?s=cl&p=i&mlu=4&amv=1"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-tier luxury"
+          onclick="fbq('track', 'Lead')"
+        >
+          <img src="icon-luxury.png" alt="Zeta Luxury" class="tier-icon" />
+          <span class="tier-text">
+            <span class="tier-name">Zeta Luxury 💎</span>
+            <span class="tier-desc">Grupo exclusivo. Dinámicas desde $30K en adelante y premios millonarios.</span>
+          </span>
+        </a>
+      </div>
+    </div>
   </div>
 </main>
 
