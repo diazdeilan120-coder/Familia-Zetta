@@ -76,7 +76,7 @@
       min-height: 100%;
       object-fit: cover;
       transform: translate(-50%, -50%) scale(1.15);
-      filter: blur(4px) brightness(0.42) saturate(1.15);
+      filter: blur(13px) brightness(0.42) saturate(1.15);
     }
     .bg-video-dim {
       position: fixed;
@@ -242,25 +242,48 @@
       letter-spacing: 0.05em;
     }
 
-    /* ── GROUP TIER BUTTONS ── */
+    /* ── GROUP TIER BUTTONS (desplegable) ── */
     .group-tiers {
       width: 100%;
       max-width: 28rem;
       margin-top: 0.5rem;
-      padding-top: 1.5rem;
+      padding-top: 1.25rem;
       border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .group-tiers-toggle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      padding: 0.4rem;
     }
     .group-tiers-title {
       font-size: 0.7rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 1rem;
     }
+    .group-tiers-chevron {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-right: 2px solid var(--muted);
+      border-bottom: 2px solid var(--muted);
+      transform: rotate(45deg);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+    .group-tiers[open] .group-tiers-chevron { transform: rotate(-135deg); }
     .group-tiers-row {
       display: flex;
       flex-direction: column;
       gap: 0.7rem;
+      margin-top: 1rem;
     }
     .btn-tier {
       display: flex;
@@ -441,8 +464,11 @@
     </a>
     <p class="btn-note">Gratis · Sin costo · Solo WhatsApp</p>
 
-    <div class="group-tiers">
-      <p class="group-tiers-title">O elige tu grupo</p>
+    <details class="group-tiers">
+      <summary class="group-tiers-toggle">
+        <span class="group-tiers-title">O elige otro grupo</span>
+        <span class="group-tiers-chevron"></span>
+      </summary>
       <div class="group-tiers-row">
         <a
           href="https://chat.whatsapp.com/JlfTetmFVTcKTV25qcVIWi?s=cl&p=i&mlu=4&amv=1"
@@ -484,7 +510,7 @@
           </span>
         </a>
       </div>
-    </div>
+    </details>
   </div>
 </main>
 
