@@ -189,6 +189,30 @@
       letter-spacing: 0.05em;
     }
 
+    /* ── BOTÓN SECUNDARIO: DINÁMICAS ACTIVAS ── */
+    .or-sep {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin: 1.4rem 0 1rem; color: var(--muted);
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    }
+    .or-sep::before, .or-sep::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+    .btn-dinamicas {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      width: 100%;
+      background: transparent;
+      color: var(--gold-light);
+      border: 1.5px solid rgba(201,168,76,0.6);
+      font-size: clamp(0.95rem, 4vw, 1.05rem);
+      font-weight: 700;
+      padding: 0.9rem 1.25rem;
+      border-radius: 1rem;
+      transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    }
+    .btn-dinamicas:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); }
+    .btn-dinamicas:active { transform: scale(0.98); }
+    .btn-dinamicas .arrow { transition: transform 0.2s; }
+    .btn-dinamicas:hover .arrow { transform: translateX(3px); }
+
     /* ── FOOTER ── */
     footer {
       position: relative;
@@ -288,6 +312,17 @@
       📲 ENTRAR AL GRUPO AHORA
     </a>
     <p class="btn-note">Gratis · Sin costo · Solo WhatsApp</p>
+
+    <!-- Secundario: lleva a las dinámicas activas (no compite con el grupo) -->
+    <div class="or-sep">o</div>
+    <a
+      href="https://familiazeta.com/inicio"
+      class="btn-dinamicas"
+      onclick="fbq('trackCustom', 'VerDinamicas')"
+    >
+      🎟️ Ver dinámicas activas <span class="arrow">→</span>
+    </a>
+    <p class="btn-note">Escoge tus números ahora mismo</p>
   </div>
 </main>
 
