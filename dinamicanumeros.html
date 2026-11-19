@@ -316,8 +316,11 @@
 
     /* ── FOOTER ── */
     footer { position: relative; z-index: 1; border-top: 1px solid rgba(255,255,255,0.06); padding: 1.5rem 1.5rem; text-align: center; }
+    @media (max-width: 759px) { footer { padding-bottom: 6rem; } } /* que la barra fija no tape el pie */
     .footer-copy { font-size: 0.7rem; color: var(--muted); }
     .footer-link { color: var(--gold); }
+    .footer-credito { margin-top: 0.35rem; font-size: 0.7rem; color: var(--muted); }
+    .footer-credito a { display: inline-block; padding: 0.4rem 0.2rem; color: inherit; text-decoration: underline; text-underline-offset: 2px; }
   </style>
 </head>
 <body>
@@ -412,6 +415,7 @@
 <!-- FOOTER -->
 <footer>
   <p class="footer-copy">© <span id="year"></span> Familia Zeta. Todos los derechos reservados.</p>
+  <p class="footer-credito">Created by <a href="https://wa.me/573052418455?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Familia%20Zeta%20y%20quiero%20una%20similar" target="_blank" rel="noopener">Turizo Ads · 305 241 8455</a></p>
 </footer>
 
 <!-- MOBILE STICKY BAR -->
